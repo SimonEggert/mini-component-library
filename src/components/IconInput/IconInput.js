@@ -35,13 +35,13 @@ const IconInput = ({
   return (
     <Wrapper width={width} underlineHeight={styles.underlineHeight}>
       <VisuallyHidden>{label}</VisuallyHidden>
+      <IconWrapper id={icon} size={styles.iconSize}/>
       <TextInput 
         placeholder={placeholder}
         fontSize={styles.fontSize}
         padding={styles.padding}
         paddingLeft={styles.paddingLeft}
       />
-      <IconWrapper id={icon} size={styles.iconSize}/>
     </Wrapper>
   );
 };
@@ -68,6 +68,17 @@ const Wrapper = styled.label`
   }
 `;
 
+const IconWrapper = styled(Icon)`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 2px;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: ${props => props.size}px;
+  height: ${props => props.size}px;
+`;
+
 const TextInput = styled.input`
   width: 100%;
   border: none;
@@ -82,36 +93,10 @@ const TextInput = styled.input`
     outline-offset: 0.25em;
   }
 
-  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  ::placeholder {
     font-weight: 400;
     color: ${COLORS.gray500};
   }
-
-  ::-moz-placeholder { /* Firefox 19+ */
-    font-weight: 400;
-    color: ${COLORS.gray500};
-  }
-
-  :-ms-input-placeholder { /* IE 10+ */
-    font-weight: 400;
-    color: ${COLORS.gray500};
-  }
-
-  :-moz-placeholder { /* Firefox 18- */
-    font-weight: 400;
-    color: ${COLORS.gray500};
-  }
-`;
-
-const IconWrapper = styled(Icon)`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 2px;
-  margin-top: auto;
-  margin-bottom: auto;
-  width: ${props => props.size}px;
-  height: ${props => props.size}px;
 `;
 
 export default IconInput;
