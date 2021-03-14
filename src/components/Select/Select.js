@@ -13,9 +13,9 @@ const Select = ({ label, value, onChange, children }) => {
     <Wrapper>
       <Label>
         <VisuallyHidden>{label}</VisuallyHidden>
-        <SelectEl value={value} onChange={onChange}>
+        <NativeSelect value={value} onChange={onChange}>
           {children}
-        </SelectEl>
+        </NativeSelect>
       </Label>
       {displayedValue}
       <Chevron id="chevron-down" size={24} />
@@ -50,7 +50,7 @@ const Label = styled.label`
   height: 100%;
 `;
 
-const SelectEl = styled.select`
+const NativeSelect = styled.select`
   width: 100%;
   height: 100%;
 `;
