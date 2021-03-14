@@ -41,16 +41,16 @@ const Wrapper = styled.div`
   }
 `;
 
-const SelectEl = styled.select`
-  width: 100%;
-  height: 100%;
-`;
-
 const Label = styled.label`
   opacity: 0;
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+`;
+
+const SelectEl = styled.select`
   width: 100%;
   height: 100%;
 `;
